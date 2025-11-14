@@ -44,7 +44,8 @@ namespace DSRemapper.MKLinuxOutput
 
         public void Execute()
         {
-            
+            while(pendingActions.TryDequeue(out var action))
+                startInfo.ArgumentList.Add(action);
         }
         internal static bool CommandExists(string commandName)
         {
