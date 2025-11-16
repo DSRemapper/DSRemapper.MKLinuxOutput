@@ -10,7 +10,7 @@ namespace DSRemapper.MKLinuxOutput
     /// <summary>
     /// Keyboard controller class
     /// </summary>
-    [EmulatedController("Keyboard/ydotool")]
+    [EmulatedController("Keyboard/uinput")]
     public class Keyboard : IDSROutputController
     {
         private static readonly DSRLogger logger = DSRLogger.GetLogger("DSRemapper.MKLinuxOutput/ydotool");
