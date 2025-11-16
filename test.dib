@@ -8,35 +8,6 @@ using System;
 using System.IO;
 using System.Diagnostics;
 
-private static bool CommandExists(string commandName)
-    {
-        try
-        {
-            using (Process process = new Process())
-            {
-                process.StartInfo.FileName = "/bin/bash"; // Use bash to execute the command
-                process.StartInfo.Arguments = $"-c \"command -v {commandName}\""; // Check if command exists
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.RedirectStandardError = true;
-                process.StartInfo.CreateNoWindow = true;
-
-                process.Start();
-                process.WaitForExit();
-
-                // If the command exists, command -v will return 0 (success)
-                // and print its path to standard output.
-                // If it doesn't exist, it will return a non-zero exit code.
-                return process.ExitCode == 0;
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"An error occurred: {ex.Message}");
-            return false;
-        }
-    }
-
 #!csharp
 
 Console.WriteLine(CommandExists("ydotools"));

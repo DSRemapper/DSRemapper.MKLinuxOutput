@@ -8,11 +8,11 @@ namespace DSRemapper.MKLinuxOutput
     public enum MouseButton
     {
         /// <summary>The primary mouse button (Left Click).</summary>
-        Left = 272,
+        LEFT = 0x110,
         /// <summary>The middle mouse button (Middle Click/Scroll Wheel).</summary>
-        Middle = 273,
+        MIDDLE = 0x112,
         /// <summary>The secondary mouse button (Right Click).</summary>
-        Right = 274
+        RIGHT = 0x111
     }
 
     /// <summary>
@@ -78,6 +78,8 @@ namespace DSRemapper.MKLinuxOutput
         RIGHTBRACE = 27,
         /// <summary>Enter / Return Key</summary>
         ENTER = 28,
+        // /// <inheritdoc cref="ENTER"/>
+        //RETURN = ENTER,
         /// <summary>Left Control Key</summary>
         LEFTCTRL = 29,
         /// <summary>A Key</summary>
